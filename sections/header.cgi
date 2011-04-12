@@ -5,6 +5,9 @@
 	<head>
 		<title><%= $ptitle %> | <%= $sitename %></title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<style rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style rel="stylesheet" type="text/css" href="css/framework.css" />
+		<style rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 
 	<body>
