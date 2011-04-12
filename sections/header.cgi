@@ -10,14 +10,44 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 
-	<body>
+	<body class="main">
 		<div id="container" class="grid_12">
 			<div id="header" class="grid_12">
-			
+				<h1><%= $sitename %></h1>
+				<h2><%= $sitedescription %></h2>
 			</div>
 			
 			<div id="menu" class="grid_12">
-			
+				<ul>
+					<li>Home/Status</li>
+					<li>Storage
+						<ul>
+							<li>Drives</li>
+							<li>Shares</li>
+						</ul>
+					</li>
+					<li>Services
+						<ul>
+							<li>Samba</li>
+							<li>NFS</li>
+							<li>FTP</li>
+							<li>HTTP</li>
+							<li>DNS/DHCP</li>
+						</ul>
+					</li>
+					<li>Extras
+						<ul>
+							<li>Downloads</li>
+						</ul>
+					</li>
+					<li>Diagnostics
+						<ul>
+							<li>Logs</li>
+							<li>Process list</li>
+							<li>Hardware Information</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 			
 			<div id="content" class="grid_12">
