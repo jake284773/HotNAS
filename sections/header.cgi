@@ -10,16 +10,16 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
-		$(document).ready(function () {	
+		$(document).ready(function () {
 			$('div#menu li').hover(
 				function () {
-					//show its submenu
-					$('ul', this).slideDown(100);
-		 
-				}, 
+				//show its submenu
+				$('ul', this).show();
+
+				},
 				function () {
-					//hide its submenu
-					$('ul', this).slideUp(100);			
+				//hide its submenu
+				$('ul', this).hide();
 				}
 			);
 		});
@@ -34,15 +34,15 @@
 			</div>
 			
 			<div id="menu" class="grid_12">
-				<ul id="nav" class="omega">
+				<ul id="nav">
 					<li><a href="#">Home/Status</a></li>
-					<li>Storage
+					<li><a href="#">Storage</a>
 						<ul>
 							<li><a href="#">Drives</a></li>
 							<li><a href="#">Shares</a></li>
 						</ul>
 					</li>
-					<li>Services
+					<li><a href="#">Services</a>
 						<ul>
 							<li><a href="#">Samba</a></li>
 							<li><a href="#">NFS</a></li>
@@ -51,12 +51,12 @@
 							<li><a href="#">DNS/DHCP</a></li>
 						</ul>
 					</li>
-					<li>Extras
+					<li><a href="#">Extras</a>
 						<ul>
 							<li><a href="#">Downloads</a></li>
 						</ul>
 					</li>
-					<li>Diagnostics
+					<li><a href="#">Diagnostics</a>
 						<ul>
 							<li><a href="#">Logs</a></li>
 							<li><a href="#">Process list</a></li>

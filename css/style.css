@@ -58,32 +58,34 @@ div#header h2
 
 /* Menu elements */
 
+div#menu
+{
+	margin-bottom: 10px;
+}
+
 ul#nav li 
 {
 	float:left; 
 	display:block; 
-	width:100px; 
-	background:#ccc; 
+	width:120px; 
+	background: #555753;
 	position:relative;
 	z-index:500; 
-	margin:0 1px;
+	border-right: 1px solid #ccccce;
 }
 
 ul#nav li a
 {
-	display:block; 
-	padding:8px 5px 0 5px; 
-	font-weight:700;  
-	height:23px; 
-	text-decoration:none; 
-	color:#fff; 
-	text-align:center; 
-	color:#333;
+	display: block;
+	padding: 5px;
+	text-decoration: none; 
+	color: #ccccce;
 }
 
 ul#nav li a:hover
 {
-	color:#fff;
+	background: #f57900;
+	color: #fff;
 }
 
 
@@ -103,10 +105,8 @@ ul#nav ul
 }
 
 ul#nav ul li
-{
-	width:100px; 
-	float:left; 
-	border-top:1px solid #fff;
+{ 
+	float:left;
 }
 
 ul#nav ul a
@@ -114,12 +114,13 @@ ul#nav ul a
 	display:block;  
 	height:15px;
 	padding: 8px 5px; 
-	color:#666;
+	color: #eeeeec;
 }
 
 ul#nav ul a:hover
 {
-	text-decoration:underline;	
+	background: #f57900;
+	color: #fff;
 }
  
 
