@@ -22,12 +22,32 @@
 body.main
 {
 	font: 16px Helvetica, Arial, Tahoma, sans-serif;
-	background: #F1F1F1;
+	background: #f1f1f1;
 }
 
 div#container
 {
-	background: #FFF;
+	background: #fff;
 	overflow: hidden;
 	margin: 40px auto;
+}
+
+/* Header elements */
+div#header
+{
+	padding: 10px;
+}
+
+div#header h1
+{
+	font-size: 2.4em;
+	color: #f57900;
+	
+}
+
+div#header h2
+{
+	color: #555753;
+	font-style: oblique;
+	font-family: Georgia, serif;
 }
