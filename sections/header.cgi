@@ -8,6 +8,22 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/framework.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function () {	
+			$('div#menu li').hover(
+				function () {
+					//show its submenu
+					$('ul', this).slideDown(100);
+		 
+				}, 
+				function () {
+					//hide its submenu
+					$('ul', this).slideUp(100);			
+				}
+			);
+		});
+		</script>
 	</head>
 
 	<body class="main">
@@ -18,33 +34,33 @@
 			</div>
 			
 			<div id="menu" class="grid_12">
-				<ul>
-					<li>Home/Status</li>
+				<ul id="nav" class="omega">
+					<li><a href="#">Home/Status</a></li>
 					<li>Storage
 						<ul>
-							<li>Drives</li>
-							<li>Shares</li>
+							<li><a href="#">Drives</a></li>
+							<li><a href="#">Shares</a></li>
 						</ul>
 					</li>
 					<li>Services
 						<ul>
-							<li>Samba</li>
-							<li>NFS</li>
-							<li>FTP</li>
-							<li>HTTP</li>
-							<li>DNS/DHCP</li>
+							<li><a href="#">Samba</a></li>
+							<li><a href="#">NFS</a></li>
+							<li><a href="#">FTP</a></li>
+							<li><a href="#">HTTP</a></li>
+							<li><a href="#">DNS/DHCP</a></li>
 						</ul>
 					</li>
 					<li>Extras
 						<ul>
-							<li>Downloads</li>
+							<li><a href="#">Downloads</a></li>
 						</ul>
 					</li>
 					<li>Diagnostics
 						<ul>
-							<li>Logs</li>
-							<li>Process list</li>
-							<li>Hardware Information</li>
+							<li><a href="#">Logs</a></li>
+							<li><a href="#">Process list</a></li>
+							<li><a href="#">Hardware Information</a></li>
 						</ul>
 					</li>
 				</ul>
