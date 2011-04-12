@@ -7,6 +7,7 @@
 	outputlicense
 %>
 <%in sections/header.cgi%>
-	
+		
+
 		
 <%in sections/footer.cgi%>

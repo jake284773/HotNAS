@@ -5,9 +5,19 @@
 	<head>
 		<title><%= $ptitle %> | <%= $sitename %></title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<style rel="stylesheet" type="text/css" href="css/reset.css" />
-		<style rel="stylesheet" type="text/css" href="css/framework.css" />
-		<style rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/framework.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 
 	<body>
+		<div id="container" class="grid_12">
+			<div id="header" class="grid_12">
+			
+			</div>
+			
+			<div id="menu" class="grid_12">
+			
+			</div>
+			
+			<div id="content" class="grid_12">
