@@ -101,6 +101,7 @@ ul#nav li a
 {
 	display: block;
 	padding: 5px;
+	font-size: 0.9em;
 	text-decoration: none; 
 	color: #ccccce;
 	border-bottom: 1px solid #ccccce;
@@ -110,6 +111,7 @@ ul#nav li a:hover
 {
 	background: #f57900;
 	color: #fff;
+	font-weight: normal !important;
 }
 
 
@@ -159,8 +161,6 @@ div#footer
 	padding: 20px 0;
 	text-align: center;
 	color: #ccccce;
-	font-style: oblique;
-	font-family: Georgia, serif;
 }
 
 /* END Footer Elements */
