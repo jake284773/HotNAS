@@ -1,6 +1,6 @@
 #!/usr/bin/haserl
 <%
-	# libs/mainvars.cgi
+	# libs/statusfunc.cgi
 	#
 	# Copyright 2011 Jake Moreman <me@jakemoreman.co.uk>
 	#
@@ -19,10 +19,14 @@
 	# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 	# MA 02110-1301, USA.
 %>
-<% 
-	echo -en "content-type: text/html\r\n\r\n"
-	sitename="HotNAS"
-	sitedescription="A lightweight Linux NAS distribution"
-	appversion="0.01"
-	devstatus="Alpha"
+<%
+	gethostname()
+	{
+		echo -n $(hostname)
+	}
+	
+	getcpuname()
+	{
+		echo -n $(cat /proc/cpuinfo | grep 'model name' | cut -d " " -f3-)
+	}
 %>

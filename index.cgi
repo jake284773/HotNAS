@@ -7,17 +7,17 @@
 	outputlicense
 %>
 <%in sections/header.cgi %>
-<in libs/statusfunc.cgi %>
+<%in libs/statusfunc.cgi %>
 				<h3>Welcome to HotNAS!</h3>
 				<div class="grid_3 box">
 					<h4>System Information</h4>
 					<table>
 						<tr>
 							<td>Hostname</td>
-							<td>CPU</td>
+							<td><% gethostname %></td>
 						</tr>
 						<tr>
-							<td><% gethostname %></td>
+							<td>CPU</td>
 							<td><% getcpuname %></td>
 						</tr>
 					</table> 
