@@ -36,6 +36,24 @@ div#container
 	margin: 40px auto;
 }
 
+body.main p
+{
+	margin-bottom: 5px;
+	font-size: 0.8em;
+}
+
+body.main a
+{
+	color: #f57900;
+	text-decoration: none;
+	border-bottom: 2px solid #f57900; 
+}
+
+body.main a:hover
+{
+	font-weight: bold;
+}
+
 /* Header elements */
 
 div#header
@@ -65,6 +83,7 @@ div#header h2
 div#menu
 {
 	margin-bottom: 10px;
+	background: #555753;
 }
 
 ul#nav li 
@@ -76,7 +95,6 @@ ul#nav li
 	position:relative;
 	z-index:500; 
 	border-right: 1px solid #ccccce;
-	border-bottom: 1px solid #ccccce;
 }
 
 ul#nav li a
@@ -85,6 +103,7 @@ ul#nav li a
 	padding: 5px;
 	text-decoration: none; 
 	color: #ccccce;
+	border-bottom: 1px solid #ccccce;
 }
 
 ul#nav li a:hover
@@ -131,3 +150,17 @@ ul#nav ul a:hover
 
 /* END Menu elements */
 
+/* Footer Elements */
+
+div#footer
+{
+	margin-top: 20px;
+	background: #555753;
+	padding: 20px 0;
+	text-align: center;
+	color: #ccccce;
+	font-style: oblique;
+	font-family: Georgia, serif;
+}
+
+/* END Footer Elements */
