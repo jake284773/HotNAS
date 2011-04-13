@@ -1,0 +1,9 @@
+# Default installer settings
+
+# Configure Loopback
+auto lo
+iface lo inet loopback
+
+# Configure eth0 to be dhcp
+auto eth0
+iface eth0 inet dhcp
