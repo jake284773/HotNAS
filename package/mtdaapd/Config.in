@@ -1,0 +1,24 @@
+config BR2_PACKAGE_MTDAAPD
+	bool "mt-daapd"
+	select BR2_PACKAGE_LIBID3TAG
+	select BR2_PACKAGE_SQLITE
+	select BR2_PACKAGE_AVAHI
+	help
+	  mt-daapd (Firefly Media Server)
+	  The best open-source media server for the Roku SoundBridge and iTunes.
+
+	  http://www.fireflymediaserver.org/index.php
+
+config BR2_PACKAGE_MTDAAPD_OGGVORBIS
+	bool "ogg-vorbis support"
+	default y
+	depends on BR2_PACKAGE_MTDAAPD
+	help
+	  Enable Ogg-Vorbis support in mt-daapd.
+
+config BR2_PACKAGE_MTDAAPD_FLAC
+	bool "flac support"
+	default y
+	depends on BR2_PACKAGE_MTDAAPD
+	help
+	  Enable FLAC support in mt-daapd.
