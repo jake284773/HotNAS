@@ -19,11 +19,15 @@
 	MA 02110-1301, USA.
 */
 
+/* General Elements */
+
 body.main
 {
 	font: 16px Helvetica, Arial, Tahoma, sans-serif;
 	background: #f1f1f1;
 }
+
+/* END General Elements */
 
 div#container
 {
@@ -72,6 +76,7 @@ ul#nav li
 	position:relative;
 	z-index:500; 
 	border-right: 1px solid #ccccce;
+	border-bottom: 1px solid #ccccce;
 }
 
 ul#nav li a
