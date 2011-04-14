@@ -114,7 +114,7 @@ do
 				fi
 				
 				result="$(cat $tmpfile)"
-				net_eth0_ip="$result"
+				net_eth0_dns1="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
 					   --inputbox "DNS2:" 10 50 "$net_eth0_dns2" \
@@ -126,7 +126,7 @@ do
 				fi
 				
 				result="$(cat $tmpfile)"
-				net_eth0_ip="$result"
+				net_eth0_dns2="$result"
 				
 				save_network_settings
 				apply_network_settings
