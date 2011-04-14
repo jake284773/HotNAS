@@ -3,6 +3,7 @@ config BR2_PACKAGE_MTDAAPD
 	select BR2_PACKAGE_LIBID3TAG
 	select BR2_PACKAGE_SQLITE
 	select BR2_PACKAGE_AVAHI
+	select BR2_PACKAGE_AVAHI_DAEMON
 	help
 	  mt-daapd (Firefly Media Server)
 	  The best open-source media server for the Roku SoundBridge and iTunes.
