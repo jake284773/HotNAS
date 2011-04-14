@@ -1,5 +1,6 @@
 #!/bin/sh
 . /frontend/config/network
+. /frontend/cli/functions
 
 tmpfile="/tmp/clishell"
 trap "" 2 20
@@ -87,6 +88,15 @@ do
 				
 				result="$(cat $tmpfile)"
 				net_eth0_netmask="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "DNS1:" 10 50 "$net_eth0_domain" \
+					   2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					continue
+				fi
 				
 				dialog --backtitle "HotNAS CLI Menu" \
 					   --inputbox "DNS1:" 10 50 "$net_eth0_dns1" \
