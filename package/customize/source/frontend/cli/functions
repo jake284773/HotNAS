@@ -63,24 +63,25 @@ getcurrent_network_settings()
 
 	if [ "$net_eth0_broadcast" == "" ]
 	then
-		net_eth0_broadcast="$(ifconfig eth0 | awk 'NR==2 {print $3}' | cut -d: -f2)"
+		net_eth0_broadcast="$(ifconfig eth0 | awk NR==2 '{print $3}' | cut -d: -f2)"
 	fi
 
-	if [ $net_eth0_netmask == "" ]
+	if [ "$net_eth0_netmask" == "" ]
 	then
 		net_eth0_netmask="$(ifconfig eth0 | awk 'NR==2 {print $4}' | cut -d: -f2)"
 	fi
 
-	if [ $net_eth0_domain = "" ]
+	if [ "$net_eth0_domain" == "" ]
 	then
 		net_eth0_domain="$(cat /etc/resolv.conf | grep search | awk 'NR==1 {print $2}')"
-
-	if [ $net_eth0_dns1 = "" ]
+	fi
+	
+	if [ "$net_eth0_dns1" == "" ]
 	then
 		net_eth0_dns1="$(cat /etc/resolv.conf | grep nameserver | awk 'NR==1 {print $2}')"
 	fi
 
-	if [ $net_eth0_dns2 = "" ]
+	if [ "$net_eth0_dns2" == "" ]
 	then
 		net_eth0_dns2="$(cat /etc/resolv.conf | grep nameserver | awk 'NR==2 {print $2}')"
 	fi
