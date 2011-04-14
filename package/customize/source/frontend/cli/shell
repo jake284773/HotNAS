@@ -46,7 +46,7 @@ do
 				
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)"
@@ -58,7 +58,7 @@ do
 				
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)"
@@ -70,7 +70,7 @@ do
 				
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)" 
@@ -82,7 +82,7 @@ do
 				
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)"
@@ -94,7 +94,7 @@ do
 				
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)"
@@ -106,7 +106,7 @@ do
 		
 				if [ "$?" == "1" ]
 				then
-					break
+					continue
 				fi
 				
 				result="$(cat $tmpfile)"
