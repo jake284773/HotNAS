@@ -94,7 +94,7 @@ do
 				net_eth0_netmask="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "DNS1:" 10 50 "$net_eth0_domain" \
+					   --inputbox "Search domain:" 10 50 "$net_eth0_domain" \
 					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
