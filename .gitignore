@@ -11,3 +11,5 @@
 *.orig
 *.rej
 *~
+!/output/build/busybox-1.18.3/.config
+!/output/build/linux-2.6.37.2/.config
