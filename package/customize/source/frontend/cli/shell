@@ -21,6 +21,8 @@ do
 
 	case "$result" in
 		"1.")
+			getcurrent_network_settings
+			
 			dialog --backtitle "HotNAS CLI Menu" \
 				   --msgbox "View network config\n\n \
 							 Network mode: $net_eth0_mode\n \
