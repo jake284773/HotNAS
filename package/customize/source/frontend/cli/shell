@@ -35,6 +35,8 @@ do
 							 20 40
 			;;
 		"2.")
+			getcurrent_network_settings
+			
 			dialog --backtitle "HotNAS CLI Menu" \
 				   --menu "Please choose a network mode" 12 40 11 \
 				   "1." "DHCP" \
