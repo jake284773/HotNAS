@@ -127,6 +127,10 @@ do
 				
 				result="$(cat $tmpfile)"
 				net_eth0_ip="$result"
+				
+				save_network_settings
+				apply_network_settings
+				/etc/init.d/S40network restart &> /var/log/networksetup.log
 			else
 				net_eth0_mode="dhcp"
 				
