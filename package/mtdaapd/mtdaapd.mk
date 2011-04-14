@@ -37,7 +37,7 @@ define MTDAAPD_INSTALL_TARGET_CMDS
 	$(MAKE) -C $(@D) install
 	
 	@if [ ! -f $(TARGET_DIR)/etc/init.d/S92mtdaapd ]; then \
-		$(INSTALL) -m 0755 -D package/samba/S92mtdaapd $(TARGET_DIR)/etc/init.d/S92mtdaapd; \
+		$(INSTALL) -m 0755 -D package/mtdaapd/S92mtdaapd $(TARGET_DIR)/etc/init.d/S92mtdaapd; \
 	fi
 endef
 
