@@ -1,0 +1,126 @@
+#!/bin/sh
+. /frontend/config/network
+
+tmpfile="/tmp/clishell"
+trap "" 2 20
+
+while [ 1 ]
+do
+	dialog --backtitle "HotNAS CLI Menu" \
+		   --menu "Please choose an option." 12 40 11 \
+		   "1." "View network config" \
+		   "2." "Set network config" \
+		   "3." "Root shell" \
+		   "4." "Reboot system" \
+		   "5." "Shutdown system" \
+		   "6." "Exit shell" 2> $tmpfile
+		   
+	result=$(cat $tmpfile)
+
+	case "$result" in
+		"1.")
+			dialog --backtitle "HotNAS CLI Menu" \
+				   --msgbox "View network config\n\n \
+							 Network mode: $net_eth0_mode\n \
+							 IP Address: $net_eth0_ip\n \
+							 Gateway: $net_eth0_gateway\n \
+							 Broadcast: $net_eth0_broadcast\n \
+							 Netmask: $net_eth0_netmask\n \
+							 DNS1: $net_eth0_dns1\n \
+							 DNS2: $net_eth0_dns2" \
+							 20 40
+			;;
+		"2.")
+			dialog --backtitle "HotNAS CLI Menu" \
+				   --menu "Please choose a network mode" 12 40 11 \
+				   "1." "DHCP" \
+				   "2." "Static" 2> $tmpfile
+			result=$(cat $tmpfile)
+			
+			if [ "$result" == "2." ]
+			then
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "IP Address:" 10 50 "$net_eth0_ip" 2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)"
+				net_eth0_ip="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "Gateway:" 10 50 "$net_eth0_gateway" 2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)"
+				net_eth0_gateway="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "Broadcast:" 10 50 "$net_eth0_broadcast" 2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)" 
+				net_eth0_broadcast="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "Netmask:" 10 50 "$net_eth0_netmask" 2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)"
+				net_eth0_netmask="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "DNS1:" 10 50 "$net_eth0_dns1" 2> $tmpfile
+				
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)"
+				net_eth0_ip="$result"
+				
+				dialog --backtitle "HotNAS CLI Menu" \
+					   --inputbox "DNS2:" 10 50 "$net_eth0_dns2" 2> $tmpfile
+		
+				if [ "$?" == "1" ]
+				then
+					break;
+				fi
+				
+				result="$(cat $tmpfile)"
+				net_eth0_ip="$result"
+			fi
+			
+			;;
+		"3.")
+			sh
+			;;
+		"4.")
+			reboot
+			;;
+		"5.")
+			poweroff
+			;;
+		"6.")
+			exit 0
+			;;
+		*)
+			continue
+			;;	   
+	esac
+done
