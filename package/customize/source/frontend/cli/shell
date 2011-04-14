@@ -41,6 +41,8 @@ do
 			
 			if [ "$result" == "2." ]
 			then
+				net_eth0_mode="static"
+				
 				dialog --backtitle "HotNAS CLI Menu" \
 					   --inputbox "IP Address:" 10 50 "$net_eth0_ip" \
 					   2> $tmpfile
@@ -121,7 +123,28 @@ do
 				
 				result="$(cat $tmpfile)"
 				net_eth0_ip="$result"
-			fi
+			else
+				net_eth0_mode="dhcp"
+				
+				save_network_settings
+				apply_network_settings
+				/etc/init.d/S40network restart &> /var/log/networksetup.log
+				
+				if [ "$?" == "0" ]
+				then
+					dialog --backtitle "HotNAS CLI Menu" \
+						   --msgbox "New network settings applied.\n \
+									Web frontend can be accessed at \
+									http://$net_eth0_ip" \
+									20 40
+				else
+					dialog --backtitle "HotNAS CLI Menu" \
+						   --msgbox "New settings failed to apply.\n \
+									Please launch root shell and \
+									view /var/log/networksetup.log." \
+									20 40
+				fi
+			fi					
 			;;
 		"3.")
 			sh
