@@ -9,8 +9,8 @@ save_network_settings()
 	echo "# DO NOT EDIT!" >> "$netconfig_file"
 	echo >> "$netconfig_file"
 	
-	echo "net_eth0_mode=\"net_eth0_mode\"" >> "$netconfig_file"
-	echo "net_eth0_ip=\"net_eth0_ip\"" >> "$netconfig_file"
+	echo "net_eth0_mode=\"$net_eth0_mode\"" >> "$netconfig_file"
+	echo "net_eth0_ip=\"$net_eth0_ip\"" >> "$netconfig_file"
 	echo "net_eth0_gateway=\"$net_eth0_gateway\"" >> "$netconfig_file"
 	echo "net_eth0_broadcast=\"$net_eth0_broadcast\"" >> "$netconfig_file"
 	echo "net_eth0_mode=\"$net_eth0_netmask\"" >> "$netconfig_file"
