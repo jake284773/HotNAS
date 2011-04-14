@@ -41,7 +41,8 @@ do
 			if [ "$result" == "2." ]
 			then
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "IP Address:" 10 50 "$net_eth0_ip" 2> $tmpfile
+					   --inputbox "IP Address:" 10 50 "$net_eth0_ip" \
+					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
 				then
@@ -52,7 +53,8 @@ do
 				net_eth0_ip="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "Gateway:" 10 50 "$net_eth0_gateway" 2> $tmpfile
+					   --inputbox "Gateway:" 10 50 "$net_eth0_gateway" \
+					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
 				then
@@ -63,7 +65,8 @@ do
 				net_eth0_gateway="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "Broadcast:" 10 50 "$net_eth0_broadcast" 2> $tmpfile
+					   --inputbox "Broadcast:" 10 50 "$net_eth0_broadcast" \
+					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
 				then
@@ -74,7 +77,8 @@ do
 				net_eth0_broadcast="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "Netmask:" 10 50 "$net_eth0_netmask" 2> $tmpfile
+					   --inputbox "Netmask:" 10 50 "$net_eth0_netmask" \
+					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
 				then
@@ -85,7 +89,8 @@ do
 				net_eth0_netmask="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "DNS1:" 10 50 "$net_eth0_dns1" 2> $tmpfile
+					   --inputbox "DNS1:" 10 50 "$net_eth0_dns1" \
+					   2> $tmpfile
 				
 				if [ "$?" == "1" ]
 				then
@@ -96,7 +101,8 @@ do
 				net_eth0_ip="$result"
 				
 				dialog --backtitle "HotNAS CLI Menu" \
-					   --inputbox "DNS2:" 10 50 "$net_eth0_dns2" 2> $tmpfile
+					   --inputbox "DNS2:" 10 50 "$net_eth0_dns2" \
+					   2> $tmpfile
 		
 				if [ "$?" == "1" ]
 				then
