@@ -9,7 +9,7 @@ DAEMON=/usr/sbin/$NAME
 case "$1" in
   start)
 	echo -n "Starting $DESC: "
-	start-stop-daemon -S -b -x $NAME -- -c /etc/lighttpd.conf
+	start-stop-daemon -S -b -x $NAME -- -f /etc/lighttpd.conf
 	echo "OK"
 	;;
   stop)
