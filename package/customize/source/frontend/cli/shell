@@ -166,7 +166,7 @@ do
 		"4.")
 			dialog --backtitle "HotNAS CLI Fallback" \
 				   --title "Confirmation" \
-				   --yesno "Reboot system?" 10 40
+				   --yesno "Reboot system?" 5 40
 			
 			if [ "$?" == "0" ]
 			then
@@ -177,7 +177,7 @@ do
 		"5.")
 			dialog --backtitle "HotNAS CLI Fallback" \
 				   --title "Confirmation" \
-				   --yesno "Shutdown system?" 10 40
+				   --yesno "Shutdown system?" 5 40
 			
 			if [ "$?" == "0" ]
 			then
