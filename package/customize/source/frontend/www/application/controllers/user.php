@@ -5,6 +5,8 @@ class User extends CI_Controller {
 		$data['title'] = 'Login';
 		$data['app'] = 'HotNAS';
 		$data['slogan'] = 'A lightweight NAS Linux distribution';
+		$data['msgcode'] = 0;
+		$data['msgtxt'] = '';
 		
 		// Load required libraries/helpers
 		$this->load->library(array('session'));
@@ -20,11 +22,10 @@ class User extends CI_Controller {
 			exec('sshpass -p ' . $login_data['password'] . ' ssh -y -l root localhost touch /tmp/frontend_login');
 			
 			if($login_data['username'] != 'admin' || !file_exists('/tmp/frontend_login'))
-				$auth_failed = TRUE;
+				$data['msgcode'] = 1;
+				$data['msgtxt'] = 'Invalid username or password';
 			else
-			{
-				$auth_failed = FALSE;
-				
+			{	
 				exec('rm -f /tmp/frontend_login');
 				
 				$sessiondata = array(

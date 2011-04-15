@@ -88,73 +88,21 @@ div#header h2
 
 div#menu
 {
-	margin-bottom: 10px;
-	background: #555753;
+	border-right: 3px solid #f57900;
+	padding: 10px;
 }
 
-ul#nav li 
+div#menu ul
 {
-	float:left; 
-	display:block; 
-	width:120px; 
-	background: #555753;
-	position:relative;
-	z-index:500; 
-	border-right: 1px solid #ccccce;
+	margin-left: 10px;
+	list-style-type: disc;
 }
 
-ul#nav li a
+div#menu ul li ul
 {
-	display: block;
-	padding: 5px;
-	font-size: 0.9em;
-	text-decoration: none; 
-	color: #ccccce;
-	border-bottom: 1px solid #ccccce;
+	margin-left: 20px;
+	list-style-type: square;
 }
-
-ul#nav li a:hover
-{
-	background: #f57900;
-	color: #fff;
-	font-weight: normal !important;
-}
-
-
-ul#nav a.selected
-{
-	color:#f00;
-}
-
-ul#nav ul
-{
-	position:absolute; 
-	left:0; 
-	display:none; 
-	margin:0 0 0 -1px; 
-	padding:0; 
-	list-style:none;
-}
-
-ul#nav ul li
-{ 
-	float:left;
-}
-
-ul#nav ul a
-{
-	display:block;  
-	height:15px;
-	padding: 8px 5px; 
-	color: #eeeeec;
-}
-
-ul#nav ul a:hover
-{
-	background: #f57900;
-	color: #fff;
-}
- 
 
 /* END Menu elements */
 
@@ -203,3 +151,35 @@ div#footer
 }
 
 /* END Footer Elements */
+
+/* Msgbox Elements */
+
+div.info, div.success, div.warning, div.error, div.validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+div.info {
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('/img/info.png');
+}
+div.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('/img/success.png');
+}
+div.warning {
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('/img/warning.png');
+}
+div.error {
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('/img/error.png');
+}
+
+/* END Msgbox Elements */

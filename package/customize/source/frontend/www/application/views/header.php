@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="author" content="Jake Moreman" />
+		<meta name="copyright" content="&copy; 2009 - <?=date('Y')?> Jake Moreman" />
 		<title><?=$title?> | <?=$app?></title>
 		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="/css/framework.css" />
