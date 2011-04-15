@@ -1,0 +1,3 @@
+#!/bin/sh
+touch /tmp/frontend_login
+chown www-admin:www-admin /tmp/frontend_login

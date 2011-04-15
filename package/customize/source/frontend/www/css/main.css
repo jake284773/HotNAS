@@ -27,8 +27,8 @@ body.main
 	background: #f1f1f1;
 }
 
-div.left { float: left; }
-div.right { float: right; }
+div.left, img.left { float: left; }
+div.right, img.right { float: right; }
 div.clear { clear: both; }
 
 /* END General Elements */
@@ -59,6 +59,12 @@ body.main a:hover
 }
 
 /* Header elements */
+
+div#header img#logo
+{
+	float: left;
+	margin-right: 15px;
+}
 
 div#header
 {
@@ -96,6 +102,13 @@ div#menu ul
 {
 	margin-left: 10px;
 	list-style-type: disc;
+}
+
+div#menu li a
+{
+	text-decoration: none;
+	border-bottom: 0;
+	color: #555753;
 }
 
 div#menu ul li ul
