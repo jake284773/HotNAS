@@ -1,0 +1,4 @@
+config BR2_PACKAGE_SSHPASS
+	bool "sshpass"
+	help
+	  Allows non-interactive ssh login
