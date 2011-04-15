@@ -24,6 +24,3 @@ for i in /etc/init.d/S??* ;do
 	    ;;
     esac
 done
-
-echo "Starting CLI Fallback "
-/frontend/cli/shell &
