@@ -1,5 +1,33 @@
 #!/bin/sh
 
+show_topmenu()
+{
+	clear
+	echo "HotNAS Fallback CLI"
+	echo
+	echo "1. View network config"
+	echo "2. Set network config"
+	echo "3. Change root password"
+	echo "4. Root shell"
+	echo "5. Reboot system"
+	echo "6. Shutdown system"
+	echo -n "Option: "
+}
+
+print_network_settings()
+{
+	clear
+	echo "Mode: $net_eth0_mode"
+	echo "IP Address: $net_eth0_ip"
+	echo "Gateway: $net_eth0_gateway"
+	echo "Broadcast: $net_eth0_broadcast"
+	echo "Netmask: $net_eth0_netmask"
+	echo "Domain: $net_eth0_domain"
+	echo "DNS1: $net_eth0_dns1"
+	echo "DNS2: $net_eth0_dns2"
+	echo -n "Press any key to return to menu "
+}
+
 save_network_settings()
 {
 	netconfig_file="/frontend/config/network"
@@ -13,12 +41,80 @@ save_network_settings()
 	echo "net_eth0_ip=\"$net_eth0_ip\"" >> "$netconfig_file"
 	echo "net_eth0_gateway=\"$net_eth0_gateway\"" >> "$netconfig_file"
 	echo "net_eth0_broadcast=\"$net_eth0_broadcast\"" >> "$netconfig_file"
-	echo "net_eth0_mode=\"$net_eth0_netmask\"" >> "$netconfig_file"
-	echo "net_eth0_mode=\"$net_eth0_domain\"" >> "$netconfig_file"
+	echo "net_eth0_netmask=\"$net_eth0_netmask\"" >> "$netconfig_file"
+	echo "net_eth0_domain=\"$net_eth0_domain\"" >> "$netconfig_file"
 	echo "net_eth0_dns1=\"$net_eth0_dns1\"" >> "$netconfig_file"
 	echo "net_eth0_dns2=\"$net_eth0_dns2\"" >> "$netconfig_file"
 	
 	chmod +x "$netconfig_file"
+}
+
+set_network_settings()
+{
+	while [ "$set_network" == "1" ]
+	do
+		echo
+		echo "Network Mode"
+		echo "1. DHCP"
+		echo "2. Static"
+		echo "3. Return to top menu"
+		echo -n "Option: "
+		read OPTION
+		echo
+		
+		case "$OPTION" in
+			"1")
+				net_eth0_mode="dhcp"
+				
+				save_network_settings
+				apply_network_settings
+				
+				;;
+			"2")
+				net_eth0_mode="static"
+				
+				echo -n "IP Address: "
+				read OPTION
+				net_eth0_ip="$OPTION"
+				
+				echo -n "Gateway: "
+				read OPTION
+				net_eth0_gateway="$OPTION"
+				
+				echo -n "Broadcast: "
+				read OPTION
+				net_eth0_broadcast="$OPTION"
+				
+				echo -n "Netmask: "
+				read OPTION
+				net_eth0_netmask="$OPTION"
+				
+				echo -n "Domain [optional]: "
+				read OPTION
+				net_eth0_domain="$OPTION"
+				
+				echo -n "DNS1: "
+				read OPTION
+				net_eth0_dns1="$OPTION"
+				
+				echo -n "DNS2 [optional]: "
+				read OPTION
+				net_eth0_dns2="$OPTION"
+				echo
+				
+				save_network_settings
+				apply_network_settings
+				;;
+			"3")
+				set_network="0"
+				;;
+			*)
+				echo "Invalid option"
+				sleep 2
+				continue
+				;;
+		esac
+	done
 }
 
 apply_network_settings()
@@ -47,6 +143,27 @@ apply_network_settings()
 			echo "nameserver $net_eth0_dns2" >> "$resolv_file"
 		fi
 	fi
+	
+	/etc/init.d/S40network restart &> /var/log/netsetup.log
+	
+	if [ $? -eq 0 ]
+	then
+		getcurrent_network_settings
+		echo "New network settings applied sucessfully!"
+		echo "The web frontend can be accessed at: http://$net_eth0_ip"
+		echo -n "Press any key to return to the top menu "
+		read
+		set_network="0"
+	else
+		getcurrent_network_settings
+		echo "New network settings failed to apply."
+		echo "Launch a root shell and view the file /var/log/netsetup.log for more details."
+		echo -n "Press any key to return to the top menu "
+		read
+		set_network="0"
+	fi
+	
+	echo
 }
 
 getcurrent_network_settings()
@@ -59,4 +176,38 @@ getcurrent_network_settings()
 	net_eth0_domain="$(cat /etc/resolv.conf | grep search | awk 'NR==1 {print $2}')"
 	net_eth0_dns1="$(cat /etc/resolv.conf | grep nameserver | awk 'NR==1 {print $2}')"
 	net_eth0_dns2="$(cat /etc/resolv.conf | grep nameserver | awk 'NR==2 {print $2}')"
+}
+
+reboot_system()
+{
+	echo
+	echo -n "Are you sure? [y/N]"
+	read OPTION
+	
+	case "$OPTION" in
+		"Y"|"y")
+			reboot
+			exit
+			;;
+		*)
+			continue
+			;;
+	esac
+}
+
+shutdown_system()
+{
+	echo
+	echo -n "Are you sure? [y/N]"
+	read OPTION
+	
+	case "$OPTION" in
+		"Y"|"y")
+			poweroff
+			exit
+			;;
+		*)
+			continue
+			;;
+	esac
 }
