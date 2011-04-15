@@ -8,11 +8,20 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
 	</head>
 
-	<body class="main login">
+	<body class="main admin">
 		<div id="container" class="container_12">
 			<div id="header" class="grid_12">
 				<h1><?=$app?></h1>
 				<h2><?=$slogan?></h2>
 			</div>
+			<div id="menu" class="grid_12">
+				<ul id="nav">
+					<li><a href="#">Status</a></li>
+					<li><a href="#">Storage</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Diagnostics</a></li>
+					<li><a href="/user/logout">Logout</a></li>
+				</ul>
+			</div>
 			
-			<div id="login" class="grid_3">
+			<div id="main" class="grid_12">

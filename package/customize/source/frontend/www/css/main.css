@@ -1,0 +1,205 @@
+/*
+	css/style.css
+
+	Copyright 2011 Jake Moreman <me@jakemoreman.co.uk>
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301, USA.
+*/
+
+/* General Elements */
+
+body.main
+{
+	font: 16px Helvetica, Arial, Tahoma, sans-serif;
+	background: #f1f1f1;
+}
+
+div.left { float: left; }
+div.right { float: right; }
+div.clear { clear: both; }
+
+/* END General Elements */
+
+div#container
+{
+	background: #fff;
+	overflow: hidden;
+	margin: 40px auto;
+}
+
+body.main p
+{
+	margin-bottom: 5px;
+	font-size: 0.8em;
+}
+
+body.main a
+{
+	color: #f57900;
+	text-decoration: none;
+	border-bottom: 2px solid #f57900; 
+}
+
+body.main a:hover
+{
+	font-weight: bold;
+}
+
+/* Header elements */
+
+div#header
+{
+	padding: 10px;
+	z-index: 5;
+	border-bottom: 3px solid #f57900;
+	margin-bottom: 15px;
+}
+
+div#header h1
+{
+	font-size: 2.4em;
+	color: #f57900;
+	
+}
+
+div#header h2
+{
+	color: #555753;
+	font-style: oblique;
+	font-family: Georgia, serif;
+}
+
+/* END Header elements */
+
+/* Menu elements */
+
+div#menu
+{
+	margin-bottom: 10px;
+	background: #555753;
+}
+
+ul#nav li 
+{
+	float:left; 
+	display:block; 
+	width:120px; 
+	background: #555753;
+	position:relative;
+	z-index:500; 
+	border-right: 1px solid #ccccce;
+}
+
+ul#nav li a
+{
+	display: block;
+	padding: 5px;
+	font-size: 0.9em;
+	text-decoration: none; 
+	color: #ccccce;
+	border-bottom: 1px solid #ccccce;
+}
+
+ul#nav li a:hover
+{
+	background: #f57900;
+	color: #fff;
+	font-weight: normal !important;
+}
+
+
+ul#nav a.selected
+{
+	color:#f00;
+}
+
+ul#nav ul
+{
+	position:absolute; 
+	left:0; 
+	display:none; 
+	margin:0 0 0 -1px; 
+	padding:0; 
+	list-style:none;
+}
+
+ul#nav ul li
+{ 
+	float:left;
+}
+
+ul#nav ul a
+{
+	display:block;  
+	height:15px;
+	padding: 8px 5px; 
+	color: #eeeeec;
+}
+
+ul#nav ul a:hover
+{
+	background: #f57900;
+	color: #fff;
+}
+ 
+
+/* END Menu elements */
+
+/* Content elements */
+
+
+
+/* END Content elements */
+
+/* Login elements */
+
+div#login
+{
+	font-size: 0.9em;
+}
+
+div#login label, div#login input
+{
+	display: block;
+	float: left;
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+div#login label
+{
+	width: 110px;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 2px;
+}
+
+div#login input.button { width: 75px; }
+
+/* END Login elements */
+
+/* Footer Elements */
+
+div#footer
+{
+	margin-top: 20px;
+	background: #555753;
+	padding: 20px 0;
+	text-align: center;
+	color: #ccccce;
+}
+
+/* END Footer Elements */
