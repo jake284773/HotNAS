@@ -34,15 +34,41 @@ class Admin extends CI_Controller {
 	}
 	
 	public function status()
-	{
-		$this->load->helper('url');
-		
+	{	
 		$data['title'] = 'Admin';
 		$data['app'] = 'HotNAS';
 		$data['slogan'] = 'A lightweight NAS Linux distribution';
 		
 		$this->load->view('header', $data);
 		$this->load->view('footer', $data);
+	}
+	
+	public function diagnostics($subsection)
+	{
+		switch($subsection)
+		{
+			case 'logs':
+				$this->load->library('files');
+				
+				$data['title'] = 'Diagnostic - Logs';
+				$data['app'] = 'HotNAS';
+				$data['slogan'] = 'A lightweight NAS Linux distribution';
+				
+				$data['filename'] = $this->files->getDirectoryList('/var/log');
+				$data['filepath'] = $this->files->getDirectoryList('/var/log', 1);
+				
+				$this->load->view('header', $data);
+				$this->load->view('admin/diagnostics/logs', $data);
+				$this->load->view('footer', $data);
+				break;
+			default:
+				$data['title'] = 'Unknown page';
+				$data['app'] = 'HotNAS';
+				$data['slogan'] = 'A lightweight NAS Linux distribution';
+				
+				$this->load->view('header', $data);
+				$this->load->view('footer', $data);
+		}
 	}
 }
 ?>

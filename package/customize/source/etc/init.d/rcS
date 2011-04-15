@@ -26,4 +26,4 @@ for i in /etc/init.d/S??* ;do
 done
 
 echo "Starting CLI Fallback "
-/frontend/cli/shell
+/frontend/cli/shell &
