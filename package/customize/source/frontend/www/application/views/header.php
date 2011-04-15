@@ -14,14 +14,32 @@
 				<h1><?=$app?></h1>
 				<h2><?=$slogan?></h2>
 			</div>
-			<div id="menu" class="grid_12">
-				<ul id="nav">
-					<li><a href="#">Status</a></li>
-					<li><a href="#">Storage</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Diagnostics</a></li>
+			<div id="menu" class="grid_4 left">
+				<ul>
+					<li><a href="admin/status">Status</a></li>
+					<li><a href="#">Storage</a>
+						<ul>
+							<li><a href="#">Disks</a></li>
+							<li><a href="#">LVM</a></li>
+							<li><a href="#">Shares</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Services</a>
+						<ul>
+							<li><a href="#">FTP</a></li>
+							<li><a href="#">HTTP</a></li>
+							<li><a href="#">CIFS/SMB</a></li>
+							<li><a href="#">NFS</a></li>
+							<li><a href="#">DNS/DHCP</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Diagnostics</a>
+						<ul>
+							<li><a href="#">Logs</a></li>
+						</ul>
+					</li>
 					<li><a href="/user/logout">Logout</a></li>
 				</ul>
 			</div>
 			
-			<div id="main" class="grid_12">
+			<div id="main" class="grid_7 right">
