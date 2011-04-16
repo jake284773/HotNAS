@@ -127,6 +127,7 @@ div#main
 {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
+	font-size: 0.9em;
 }
 
 div#main h3
@@ -167,7 +168,8 @@ div#login input.button { width: 75px; }
 
 div#footer
 {
-	margin-top: 20px;
+	margin: 20px 0 0 0;
+	width: 100%;
 	background: #555753;
 	padding: 20px 0;
 	text-align: center;

@@ -29,7 +29,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 <?=form_open('admin/diagnostics/logs') . "\n" ?>
 
 <div>
-	<?=form_label('Filename', 'filename', array('style' => 'inline')) . "\n" ?>
+	<?=form_label('Filename:', 'filename', array('style' => 'inline')) . "\n" ?>
 	<?php
 	$file_list = array(
 		'/var/log/messages' => 'messages',
@@ -44,7 +44,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 <div>
 	<?php
-	echo form_label('File contents', 'filedata', array('class' => 'block')) . "\n";
+	echo form_label('File contents:', 'filedata', array('class' => 'block')) . "\n";
 	$file_textarea_options = array(
 		'name'		=> 'file_textarea',
 		'value'		=> $filecontents

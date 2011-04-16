@@ -61,6 +61,12 @@
 							<li><a href="#">DNS/DHCP</a></li>
 						</ul>
 					</li>
+					<li><a href="#">Security</a>
+						<ul>
+							<li><a href="#">Users</a></li>
+							<li><a href="#">Groups</a></li>
+						</ul>
+					</li>
 					<li><a href="#">Diagnostics</a>
 						<ul>
 							<li><a href="/admin/diagnostics/logs">Logs</a></li>
