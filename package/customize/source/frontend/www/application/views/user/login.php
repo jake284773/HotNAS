@@ -28,6 +28,8 @@ $this->load->helper('form');
 	<div class="<?php echo $msgcode; ?>"><?php echo $msgtext; ?></div>
 <?php endif; ?>
 
+<h3>Login</h3>
+
 <?=form_open('user/login')?>
 
 <div>

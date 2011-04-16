@@ -35,12 +35,20 @@ class Admin extends CI_Controller {
 	
 	public function status()
 	{	
+		$this->load->library('status');
+		
 		$data['title'] = 'Admin';
 		$data['app'] = 'HotNAS';
 		$data['slogan'] = 'A lightweight NAS Linux distribution';
 		
+		$data['hostname'] = file_get_contents('/etc/hostname');
+		$data['version'] = file_get_contents('/etc/br-version');
+		$data['build_date'] = 'TODO';
+		
 		$this->load->view('header', $data);
+		$this->load->view('admin/status', $data);
 		$this->load->view('footer', $data);
+		
 	}
 	
 	public function diagnostics($subsection)

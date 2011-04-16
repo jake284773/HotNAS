@@ -1,0 +1,23 @@
+#!/bin/sh
+meminfo="$(cat /proc/meminfo)"
+memtotal="$(cat /proc/meminfo | awk 'NR==1 {print $2}')"
+memfree="$(cat /proc/meminfo | awk 'NR==2 {print $2}')"
+memused="$(dc $memtotal $memfree - p)"
+
+case "$1" in
+	"used")
+		echo "$memused"
+		;;
+	"free")
+		echo "$memfree"
+		;;
+	"total")
+		echo "$memtotal"
+		;;
+	*)
+		echo "Usage: $0 {used|free|total}"
+		exit 1
+		;;
+esac
+
+exit 0

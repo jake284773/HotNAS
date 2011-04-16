@@ -25,6 +25,7 @@ body.main
 {
 	font: 16px Helvetica, Arial, Tahoma, sans-serif;
 	background: #f1f1f1;
+	color: #2e3436;
 }
 
 div.left, img.left { float: left; }
@@ -98,6 +99,7 @@ div#menu
 {
 	border-right: 3px solid #f57900;
 	padding: 10px;
+	min-height: 100%;
 }
 
 div#menu ul
@@ -130,10 +132,39 @@ div#main
 	font-size: 0.9em;
 }
 
-div#main h3
+div#main h3 { font-size: 1.3em; }
+
+div.progressbar
 {
-	font-size: 1.3em;
+  border: 1px solid #ccc; 
+  width: 100px; 
+  margin: 2px 5px 2px 0; 
+  padding: 1px; 
+  float: left; 
+  background: white;
 }
+
+div.progressbar > div.level
+{
+	background-color: #8ae234;
+	height: 12px;
+}
+
+/* TABLES */
+
+table, td, th
+{
+	border: 1px solid #d3d7cf;
+	padding: 10px;
+}
+
+th
+{
+	background: #eeeeec;
+	font-weight: bold;
+}
+
+/* END TABLES */
 
 /* END Content elements */
 
@@ -143,6 +174,8 @@ div#login
 {
 	font-size: 0.9em;
 }
+
+div#login h3 { font-size: 1.3em; margin-left: 40px; }
 
 div#login label, div#login input
 {

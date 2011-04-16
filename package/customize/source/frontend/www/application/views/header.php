@@ -30,6 +30,7 @@
 		<meta name="author" content="Jake Moreman" />
 		<meta name="copyright" content="&copy; 2009 - <?=date('Y')?> Jake Moreman" />
 		<title><?=$title?> | <?=$app?></title>
+		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="/css/framework.css" />
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
