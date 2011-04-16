@@ -35,14 +35,14 @@ $this->load->helper('form');
 	<input type="text" name="username" />
 </div>
 
-<div class="clear"></div>
+<div class="fclear"></div>
 
 <div>
 	<label for="password">Password</label>
 	<input type="password" name="password" />
 </div>
 
-<div class="clear"></div>
+<div class="fclear"></div>
 
 <div class="right">
 	<input class="button" type="submit" value="Submit" />

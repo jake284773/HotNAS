@@ -29,7 +29,7 @@ body.main
 
 div.left, img.left { float: left; }
 div.right, img.right { float: right; }
-div.clear { clear: both; }
+div.fclear { clear: both; }
 
 /* END General Elements */
 

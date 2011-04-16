@@ -29,16 +29,31 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 <?=form_open('admin/diagnostics/logs') . "\n" ?>
 
 <div>
-	<?=form_
+	<?=form_label('Filename', 'filename') . "\n" ?>
+	<?php
+	$file_list = array(
+		'/var/log/messages' => 'messages',
+		'/var/log/log.nmbd' => 'log.nmbd',
+		'/var/log/log.smbd' => 'log.smbd'
+	);
+	echo form_dropdown('filename', $file_list, 'messages') . "\n"
+	?>
 </div>
 
-<div class="clear"></div>
+<div class="fclear"></div>
 
 <div>
-	<!--<label for="logfile">File contents</label>-->
-	<textarea cols="100" rows="100">
-	
-	</textarea>
+	<?php
+	echo form_label('File contents', 'filedata') . "\n";
+	$file_textarea_options = array(
+		'name'        => 'file_textarea',
+		'id'          => 'file_textarea',
+		'value'       => $filecontents,
+		'maxlength'   => '100',
+		'size'        => '100'
+	);
+	echo form_textarea($file_textarea_options) . "\n";
+	?>
 </div>
 
 <?=form_close()?>

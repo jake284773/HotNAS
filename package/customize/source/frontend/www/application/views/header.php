@@ -44,7 +44,7 @@
 			</div>
 			<div id="menu" class="grid_2 left">
 				<ul>
-					<li><a href="admin/status">Status</a></li>
+					<li><a href="/admin/status">Status</a></li>
 					<li><a href="#">Storage</a>
 						<ul>
 							<li><a href="#">Disks</a></li>
@@ -63,11 +63,11 @@
 					</li>
 					<li><a href="#">Diagnostics</a>
 						<ul>
-							<li><a href="#">Logs</a></li>
+							<li><a href="/admin/diagnostics/logs">Logs</a></li>
 						</ul>
 					</li>
 					<li><a href="/user/logout">Logout</a></li>
 				</ul>
 			</div>
 			
-			<div id="main" class="grid_7 right">
+			<div id="main" class="grid_10">

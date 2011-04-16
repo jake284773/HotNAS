@@ -54,8 +54,10 @@ class Admin extends CI_Controller {
 				$data['app'] = 'HotNAS';
 				$data['slogan'] = 'A lightweight NAS Linux distribution';
 				
-				$data['filename'] = $this->files->getDirectoryList('/var/log');
-				$data['filepath'] = $this->files->getDirectoryList('/var/log', 1);
+				if($this->input->post('filename'))
+					$data['filecontents'] = file_get_contents($this->input->post('filename'));
+				else
+					$data['filecontents'] = file_get_contents('/var/log/messages');
 				
 				$this->load->view('header', $data);
 				$this->load->view('admin/diagnostics/logs', $data);
