@@ -29,14 +29,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 <?=form_open('admin/diagnostics/logs') . "\n" ?>
 
 <div>
-	<?=form_label('Filename', 'filename') . "\n" ?>
+	<?=form_label('Filename', 'filename', array('style' => 'inline')) . "\n" ?>
 	<?php
 	$file_list = array(
 		'/var/log/messages' => 'messages',
 		'/var/log/log.nmbd' => 'log.nmbd',
 		'/var/log/log.smbd' => 'log.smbd'
 	);
-	echo form_dropdown('filename', $file_list, 'messages') . "\n"
+	echo form_dropdown('filename', $file_list, $filename, 'onChange="this.form.submit()"') . "\n";
 	?>
 </div>
 
@@ -44,13 +44,10 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 <div>
 	<?php
-	echo form_label('File contents', 'filedata') . "\n";
+	echo form_label('File contents', 'filedata', array('class' => 'block')) . "\n";
 	$file_textarea_options = array(
-		'name'        => 'file_textarea',
-		'id'          => 'file_textarea',
-		'value'       => $filecontents,
-		'maxlength'   => '100',
-		'size'        => '100'
+		'name'		=> 'file_textarea',
+		'value'		=> $filecontents
 	);
 	echo form_textarea($file_textarea_options) . "\n";
 	?>

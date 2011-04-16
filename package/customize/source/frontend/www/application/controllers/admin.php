@@ -55,9 +55,15 @@ class Admin extends CI_Controller {
 				$data['slogan'] = 'A lightweight NAS Linux distribution';
 				
 				if($this->input->post('filename'))
+				{
 					$data['filecontents'] = file_get_contents($this->input->post('filename'));
+					$data['filename'] = $this->input->post('filename');
+				}
 				else
+				{
 					$data['filecontents'] = file_get_contents('/var/log/messages');
+					$data['filename'] = 'messages';
+				}
 				
 				$this->load->view('header', $data);
 				$this->load->view('admin/diagnostics/logs', $data);

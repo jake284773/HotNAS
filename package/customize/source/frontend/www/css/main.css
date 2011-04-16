@@ -30,6 +30,8 @@ body.main
 div.left, img.left { float: left; }
 div.right, img.right { float: right; }
 div.fclear { clear: both; }
+.block { display: block; }
+.inline { display: inline; }
 
 /* END General Elements */
 
@@ -121,7 +123,16 @@ div#menu ul li ul
 
 /* Content elements */
 
+div#main
+{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 
+div#main h3
+{
+	font-size: 1.3em;
+}
 
 /* END Content elements */
 
