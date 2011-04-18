@@ -1,11 +1,10 @@
-config BR2_PACKAGE_MYSQL
-	bool "MySQL 5.1 client"
-	help
-	  MySQL client
-
-config BR2_PACKAGE_MYSQL_SERVER
-	bool "MySQL 5.1 server"
-	depends on BR2_PACKAGE_MYSQL
+config BR2_PACKAGE_MYSQL_CLIENT
+	bool "MySQL Server"
+	depends on BR2_INSTALL_LIBSTDCPP
+	select BR2_PACKAGE_NCURSES
+	select BR2_PACKAGE_READLINE
 	help
 	  MySQL server
 
+comment "Mysql client requires a toolchain with C++ support enabled"
+	depends on !BR2_INSTALL_LIBSTDCPP
